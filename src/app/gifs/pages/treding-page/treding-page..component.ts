@@ -1,5 +1,12 @@
-import { ChangeDetectionStrategy, Component, output, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  output,
+  signal,
+} from '@angular/core';
 import { ListComponent } from '../../components/list/list.component';
+import { GifService } from '../../services/gifs.service';
 const imageUrls: string[] = [
   'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg',
   'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
@@ -21,5 +28,7 @@ const imageUrls: string[] = [
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class TredingComponent {
-  gifs = signal(imageUrls);
+  /* gifs = signal(imageUrls); */
+
+  gifService = inject(GifService);
 }
