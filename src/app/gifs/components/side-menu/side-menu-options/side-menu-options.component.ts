@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { GifService } from '../../../services/gifs.service';
 
 interface MenuOptions {
   label: string;
@@ -28,4 +29,5 @@ export class GifsSideMenuOptionsComponent {
       route: '/dasboard/search',
     },
   ];
+  GifService = inject(GifService);
 }
